@@ -3,17 +3,47 @@
         <meta charset="utf-8">
 
         <title>Dropzone simple example</title>
-        <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
-        <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+
+        <link rel="stylesheet" href="//rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+        <link rel="stylesheet" href="//cdn.rawgit.com/jellekralt/Responsive-Tabs/master/css/responsive-tabs.css">
     </head>
     <body>
 
-        <!-- Change /upload-target to your upload address -->
-        <form action="/upload-target" class="dropzone dz-clickable">
-            <div class="dz-default dz-message"><span>Drop files here to upload</span>
+
+        <div id="responsiveTabsDemo">
+            <ul>
+                <li><a href="#tab-1">Dropzone Upload</a></li>
+                <li><a href="#tab-2">Demo Tab 1</a></li>
+                <li><a href="#tab-3">Demo Tab 2</a></li>
+            </ul>
+
+            <div id="tab-1">
+                <!-- Change /upload-target to your upload address -->
+                <form action="/upload-target" class="dropzone dz-clickable">
+                    <div class="dz-default dz-message"><span>Drop files here to upload</span>
+                    </div>
+                </form>
+                <input type="file" multiple="multiple" class="dz-hidden-input" style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;">
             </div>
-        </form>
-        <input type="file" multiple="multiple" class="dz-hidden-input" style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;">
+
+            <div id="tab-2">
+                Second tab
+            </div>
+            <div id="tab-3">
+                Third tab
+            </div>
+        </div>
+
+
+        <script src="//rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#responsiveTabsDemo').responsiveTabs({
+                    startCollapsed: 'accordion'
+                });
+            });
+        </script>
     </body>
 
 </html>
